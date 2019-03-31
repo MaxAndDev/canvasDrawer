@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActionHandlerService } from './service/action-handler.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'canvasDrawer';
+
+  constructor(private actionHanler: ActionHandlerService) {}
+
+
+  save(){
+
+    this.actionHanler.saveState.next(true);
+  
+  }
+
+  delete(){
+
+    this.actionHanler.deleteState.next(true);
+
+  }
+
 }
